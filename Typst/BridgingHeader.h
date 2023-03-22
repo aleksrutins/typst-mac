@@ -7,3 +7,5 @@
 
 
 size_t add(size_t left, size_t right) CF_SWIFT_NAME(add(left:right:));
+
+size_t mul(size_t left, size_t right) CF_SWIFT_NAME(mul(left:right:));

@@ -3,6 +3,11 @@ pub extern fn add(left: usize, right: usize) -> usize {
     left + right
 }
 
+#[no_mangle]
+pub extern fn mul(left: usize, right: usize) -> usize {
+    left * right
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
