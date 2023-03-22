@@ -14,6 +14,10 @@
 		3FA38CF129CB16AC004E319B /* TypstTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA38CF029CB16AC004E319B /* TypstTests.swift */; };
 		3FA38CFB29CB16AC004E319B /* TypstUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA38CFA29CB16AC004E319B /* TypstUITests.swift */; };
 		3FA38CFD29CB16AC004E319B /* TypstUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA38CFC29CB16AC004E319B /* TypstUITestsLaunchTests.swift */; };
+		3FA38D0B29CB377A004E319B /* Libraries in Resources */ = {isa = PBXBuildFile; fileRef = 3FA38D0A29CB377A004E319B /* Libraries */; };
+		3FA38D0E29CB378C004E319B /* libtypst_mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA38D0D29CB378C004E319B /* libtypst_mac.dylib */; };
+		3FA38D0F29CB378C004E319B /* libtypst_mac.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 3FA38D0D29CB378C004E319B /* libtypst_mac.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		3FA38D1729CB5A2B004E319B /* libtypst_mac.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA38D0D29CB378C004E319B /* libtypst_mac.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3FA38D1029CB378C004E319B /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3FA38D0F29CB378C004E319B /* libtypst_mac.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3FA38CDB29CB16AA004E319B /* Typst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Typst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA38CDE29CB16AA004E319B /* TypstApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypstApp.swift; sourceTree = "<group>"; };
@@ -46,6 +64,9 @@
 		3FA38CFA29CB16AC004E319B /* TypstUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypstUITests.swift; sourceTree = "<group>"; };
 		3FA38CFC29CB16AC004E319B /* TypstUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypstUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3FA38D0929CB185A004E319B /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		3FA38D0A29CB377A004E319B /* Libraries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Libraries; sourceTree = "<group>"; };
+		3FA38D0D29CB378C004E319B /* libtypst_mac.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtypst_mac.dylib; path = Libraries/libtypst_mac.dylib; sourceTree = "<group>"; };
+		3FA38D1429CB3ACA004E319B /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../src; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA38D0E29CB378C004E319B /* libtypst_mac.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,11 +98,14 @@
 		3FA38CD229CB16AA004E319B = {
 			isa = PBXGroup;
 			children = (
+				3FA38D1429CB3ACA004E319B /* src */,
+				3FA38D0A29CB377A004E319B /* Libraries */,
 				3FA38D0929CB185A004E319B /* BridgingHeader.h */,
 				3FA38CDD29CB16AA004E319B /* Typst */,
 				3FA38CEF29CB16AC004E319B /* TypstTests */,
 				3FA38CF929CB16AC004E319B /* TypstUITests */,
 				3FA38CDC29CB16AA004E319B /* Products */,
+				3FA38D0C29CB378C004E319B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +156,14 @@
 			path = TypstUITests;
 			sourceTree = "<group>";
 		};
+		3FA38D0C29CB378C004E319B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FA38D0D29CB378C004E319B /* libtypst_mac.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,8 +172,10 @@
 			buildConfigurationList = 3FA38D0029CB16AC004E319B /* Build configuration list for PBXNativeTarget "Typst" */;
 			buildPhases = (
 				3FA38CD729CB16AA004E319B /* Sources */,
+				3FA38D1329CB393C004E319B /* ShellScript */,
 				3FA38CD829CB16AA004E319B /* Frameworks */,
 				3FA38CD929CB16AA004E319B /* Resources */,
+				3FA38D1029CB378C004E319B /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -235,6 +270,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA38D1729CB5A2B004E319B /* libtypst_mac.dylib in Resources */,
+				3FA38D0B29CB377A004E319B /* Libraries in Resources */,
 				3FA38CE629CB16AC004E319B /* Preview Assets.xcassets in Resources */,
 				3FA38CE329CB16AC004E319B /* Assets.xcassets in Resources */,
 			);
@@ -255,6 +292,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FA38D1329CB393C004E319B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n(cd .. && cbindgen --config cbindgen.toml --output Typst/BridgingHeader.h)\ncargo build -Z unstable-options --out-dir Libraries/\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3FA38CD729CB16AA004E319B /* Sources */ = {
@@ -349,6 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Libraries\"";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,6 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Libraries\"";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -420,6 +479,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Typst/Typst.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -432,6 +492,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rutins.Typst;
@@ -447,6 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Typst/Typst.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -459,6 +524,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rutins.Typst;
