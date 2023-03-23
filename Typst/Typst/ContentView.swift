@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var code: String = "Hello World!"
+    var pdfData: Data {
+        let result = compile_str(code: code)
+        return Data(bytes: result.data, count: result.size)
+    }
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-            Text(String(add(left: 4, right: 5)))
-            Text(String(mul(left: 16, right: 4)))
+        HStack {
+            
         }
         .padding()
     }

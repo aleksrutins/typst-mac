@@ -6,6 +6,11 @@
 #include <Foundation/Foundation.h>
 
 
-size_t add(size_t left, size_t right) CF_SWIFT_NAME(add(left:right:));
+typedef struct PtrVec {
+  const uint8_t *data;
+  size_t size;
+} PtrVec;
 
-size_t mul(size_t left, size_t right) CF_SWIFT_NAME(mul(left:right:));
+struct PtrVec compile(const char *filename) CF_SWIFT_NAME(compile(filename:));
+
+struct PtrVec compile_str(const char *code) CF_SWIFT_NAME(compile_str(code:));
