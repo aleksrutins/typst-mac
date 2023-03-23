@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F52211229CCE39A000229DD /* PDFPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F52211129CCE39A000229DD /* PDFPreview.swift */; };
 		3FA38CDF29CB16AA004E319B /* TypstApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA38CDE29CB16AA004E319B /* TypstApp.swift */; };
 		3FA38CE129CB16AA004E319B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA38CE029CB16AA004E319B /* ContentView.swift */; };
 		3FA38CE329CB16AC004E319B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA38CE229CB16AC004E319B /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F52211129CCE39A000229DD /* PDFPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreview.swift; sourceTree = "<group>"; };
 		3FA38CDB29CB16AA004E319B /* Typst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Typst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA38CDE29CB16AA004E319B /* TypstApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypstApp.swift; sourceTree = "<group>"; };
 		3FA38CE029CB16AA004E319B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				3FA38CE229CB16AC004E319B /* Assets.xcassets */,
 				3FA38CE729CB16AC004E319B /* Typst.entitlements */,
 				3FA38CE429CB16AC004E319B /* Preview Content */,
+				3F52211129CCE39A000229DD /* PDFPreview.swift */,
 			);
 			path = Typst;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			files = (
 				3FA38CE129CB16AA004E319B /* ContentView.swift in Sources */,
 				3FA38CDF29CB16AA004E319B /* TypstApp.swift in Sources */,
+				3F52211229CCE39A000229DD /* PDFPreview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

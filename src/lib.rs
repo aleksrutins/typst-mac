@@ -44,6 +44,6 @@ pub unsafe extern "C" fn compile(filename: *const c_char) -> PtrVec {
 #[no_mangle]
 pub unsafe extern "C" fn compile_str(code: *const c_char) -> PtrVec {
     let data_s = CStr::from_ptr(code);
-    fs::write("/tmp/typst-live.typ", data_s.to_str().unwrap()).unwrap();
-    return compile("/tmp/typst-live.typ".as_ptr() as *const i8);
+    fs::write("typst-live.typ", data_s.to_str().unwrap()).unwrap();
+    return compile("typst-live.typ".as_ptr() as *const i8);
 }
