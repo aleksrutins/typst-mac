@@ -25,20 +25,11 @@ pub unsafe extern "C" fn compile(filename: *const c_char) -> PtrVec {
     let filename_s = CStr::from_ptr(filename);
     let mut world = SystemWorld::new(PathBuf::new());
     world.reset();
-    world.main = match world.resolve(Path::new(filename_s.to_str().unwrap())) {
-        Ok(id) => id,
-        Err(_) => return PtrVec::from(b"error\0".to_vec())
-    };
+    world.main = world.resolve(Path::new(filename_s.to_str().unwrap())).unwrap();
 
-    match typst::compile(&world) {
-        Ok(document) => {
-            let mut buffer = typst::export::pdf(&document);
-            PtrVec::from(buffer)
-        }
-        Err(_) => {
-            PtrVec::from(b"error".to_vec())
-        }
-    }
+    let document = typst::compile(&world).unwrap();
+    let buffer = typst::export::pdf(&document);
+    PtrVec::from(buffer)
 }
 
 #[no_mangle]

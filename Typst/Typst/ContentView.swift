@@ -6,14 +6,10 @@
 //
 
 import SwiftUI
-
+private var renderPDF: Task? = Task {
+}
 struct ContentView: View {
-    @State private var code: String = "Hello World!" {
-        didSet {
-            let result = compile_str(code: code)
-            pdfData = Data(bytes: result.data, count: result.size)
-        }
-    }
+    @State private var code: String = "Hello World!"
     @State private var pdfData: Data = Data()
     var body: some View {
         HStack {
@@ -23,6 +19,21 @@ struct ContentView: View {
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 6))
                 .shadow(radius: 2)
+                .task {
+                    renderPDF = Task {
+                        let result = compile_str(code: code)
+                        print(Data(bytes: result.data, count: result.size))
+                        pdfData = Data(bytes: result.data, count: result.size)
+                    }
+                }
+                .onChange(of: code) { newCode in
+                    renderPDF?.cancel()
+                    renderPDF = Task {
+                        let result = compile_str(code: newCode)
+                        print(Data(bytes: result.data, count: result.size))
+                        pdfData = Data(bytes: result.data, count: result.size)
+                    }
+                }
             PDFPreview(data: $pdfData).clipShape(RoundedRectangle(cornerRadius: 6)).shadow(radius: 2)
         }
         .padding()
